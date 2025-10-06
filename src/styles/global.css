@@ -1,2 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+    --color-victoriano-blue: #1348AE;
+    --color-victoriano-yellow: #FFDF2C;
+    --color-victoriano-lightblue: #1959D4;
+    --color-victoriano-lightyellow: #FFD800;
+
+    --color-victoriano-gray: #6B7280;
+    --color-victoriano-lightgray: #F3F4F6;
+}

@@ -1,5 +1,6 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro"
+import "../styles/global.css"
 ---
 
 <html lang="en">
@@ -10,7 +11,12 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>CR Victorianos</title>
 	</head>
-	<body>
-		<h1>Club de rugby Victorianos</h1>
+	<body class="bg-victoriano-gray">
+		<BaseLayout title="">
+			<h1>Club de rugby Victorianos</h1>
+			<h2>Index</h2>
+
+			
+		 </BaseLayout>
 	</body>
 </html>
