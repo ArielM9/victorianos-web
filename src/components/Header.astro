@@ -1,102 +1,241 @@
 ---
 import Image from "astro/components/Image.astro";
 import logo from "../../public/images/victoriano-200x200.png"
+
+const {pathname} = Astro.url
+const currentPath = pathname
 ---
 
- <nav class="w-full bg-victoriano-lightyellow p-2 flex justify-between ">
-  <div>
-    <Image src={logo} alt="CR Victoriano" width="50" height="50">
-
-  </div>
+ <nav class="w-full bg-victoriano-lightyellow p-2 flex justify-between shadow">
+  <a href="/" class="flex items-center">
+    <Image src={logo} alt="CR Victoriano" width="50" height="50"/>
+      <h1 class="text-victoriano-blue font-bold items-center px-2 text-2xl ">CR Victoriano</h1>
+  </a>
   
   
-  <div class="flex px-5 gap-2">
-     
-    <a href="#" class="
-      bg-victoriano-lightyellow
-      text-victoriano-blue
-      p-2  
-      transition-all 
-      duration-300 
-      ease-in-out
-      hover:transform 
-      hover:-skew-x-12
-      hover:scale-130
-      hover:bg-victoriano-blue
-      hover:text-victoriano-lightyellow
-      hover: font-bold
-    ">
-      Inicio
-    </a>
+  <div class="hidden md:flex px-5 gap-6 items-center">
     
-    <a href="#" class="
-      bg-victoriano-lightyellow
+    <a href="/club" class="
+      text-xl
       text-victoriano-blue
       p-2  
       transition-all 
-      duration-300 
-      ease-in-out
-      hover:transform 
+      duration-200 
       hover:-skew-x-12
       hover:scale-130
       hover:bg-victoriano-blue
       hover:text-victoriano-lightyellow
       hover: font-bold
+      h-full
+      flex
+      items-center
     ">
       El Club
     </a>
-    
-    <a href="#" class="
-      bg-victoriano-lightyellow
+
+    <a href="/escuelita" class="
+      text-xl
       text-victoriano-blue
       p-2  
       transition-all 
-      duration-300 
-      ease-in-out
-      hover:transform 
+      duration-200 
       hover:-skew-x-12
       hover:scale-130
       hover:bg-victoriano-blue
       hover:text-victoriano-lightyellow
       hover: font-bold
+      h-full
+      flex
+      items-center
+      
     ">
-      Contacto
+      La Escuelita
     </a>
 
-    <a href="#" class="
-      bg-victoriano-lightyellow
+    <a href="/agenda" class="
+      text-xl
       text-victoriano-blue
       p-2  
       transition-all 
-      duration-300 
-      ease-in-out
-      hover:transform 
+      duration-200 
       hover:-skew-x-12
       hover:scale-130
       hover:bg-victoriano-blue
       hover:text-victoriano-lightyellow
       hover: font-bold
+      h-full
+      flex
+      items-center
+      
+    ">
+      Agenda
+    </a>
+    
+   
+
+    <a href="/tienda" class="
+      text-xl
+      text-victoriano-blue
+      p-2  
+      transition-all 
+      duration-200 
+      hover:-skew-x-12
+      hover:scale-130
+      hover:bg-victoriano-blue
+      hover:text-victoriano-lightyellow
+      hover: font-bold
+      h-full
+      flex
+      items-center
+      
+      
     ">
       Tienda
     </a>
 
-    <a href="#" class="
-      bg-victoriano-lightyellow
+     <a href="/contacto" class="
+      text-xl
       text-victoriano-blue
       p-2  
       transition-all 
-      duration-300 
-      ease-in-out
-      hover:transform 
+      duration-200 
       hover:-skew-x-12
       hover:scale-130
       hover:bg-victoriano-blue
       hover:text-victoriano-lightyellow
-      hover: font-bold
+      font-bold
+      
+      h-full
+      flex
+      items-center
+      
     ">
-      Agenda
+      Contacto
     </a>
+
+    
   </div>
+
+
+<!-- // Menu hamburguesa -->
+
+<div class="md:hidden flex items-center">
+    <!-- Checkbox invisible que controla el estado -->
+    <input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+      <label for="menu-toggle" class="
+      z-20
+      flex flex-col justify-center items-center
+      w-10 h-10
+      cursor-pointer
+    ">
+      <span class="
+        w-6 h-0.5 bg-victoriano-blue
+        transition-all duration-300
+        peer-checked:rotate-45 peer-checked:translate-y-1.5
+      "></span>
+      <span class="
+        w-6 h-0.5 bg-victoriano-blue
+        transition-all duration-300
+        mt-1.5
+        peer-checked:opacity-0
+      "></span>
+      <span class="
+        w-6 h-0.5 bg-victoriano-blue
+        transition-all duration-300
+        mt-1.5
+        peer-checked:-rotate-45 peer-checked:-translate-y-1.5
+      "></span>
+    </label>
+  <div class="
+      fixed inset-0 bg-victoriano-lightyellow
+      transform -translate-x-full
+      transition-transform duration-300 ease-in-out
+      peer-checked:translate-x-0
+      z-10
+      pt-20 px-6
+      flex flex-col items-center
+    ">
+
+      <a href="/" class="
+        w-full text-center text-xl
+        text-victoriano-blue
+        py-4 px-2  
+        transition-all duration-300
+        border-b border-victoriano-blue/20
+        font-bold
+      " aria-current={currentPath === '/club' ? 'page' : undefined}>
+        Inicio
+      </a>
+      <a href="/club" class="
+        w-full text-center text-xl
+        text-victoriano-blue
+        py-4 px-2  
+        transition-all duration-300
+        border-b border-victoriano-blue/20
+        font-bold
+      " aria-current={currentPath === '/club' ? 'page' : undefined}>
+        El Club
+      </a>
+
+      <a href="/escuelita" class="
+        w-full text-center text-xl
+        text-victoriano-blue
+        py-4 px-2  
+        transition-all duration-300
+        border-b border-victoriano-blue/20
+        font-bold
+      " aria-current={currentPath === '/escuelita' ? 'page' : undefined}>
+        La Escuelita
+      </a>
+      
+      <a href="/agenda" class="
+         w-full text-center text-xl
+        text-victoriano-blue
+        py-4 px-2  
+        transition-all duration-300
+        border-b border-victoriano-blue/20
+        font-bold
+      " aria-current={currentPath === '/agenda' ? 'page' : undefined}>
+        Agenda
+      </a>
+
+      <a href="/tienda" class="
+         w-full text-center text-xl
+        text-victoriano-blue
+        py-4 px-2  
+        transition-all duration-300
+        border-b border-victoriano-blue/20
+        font-bold
+      " aria-current={currentPath === '/tienda' ? 'page' : undefined}>
+        Tienda
+      </a>
+
+      
+
+      <a href="/contacto" class="
+         w-full text-center text-xl
+        text-victoriano-blue
+        py-4 px-2  
+        transition-all duration-300
+        border-b border-victoriano-blue/20
+        font-bold
+      " aria-current={currentPath === '/contacto' ? 'page' : undefined}>
+        Contacto
+      </a>
+    </div>
+    
+    <!-- Overlay para cerrar al hacer clic fuera -->
+    <label for="menu-toggle" class="
+      fixed inset-0 bg-black bg-opacity-50
+      hidden
+      peer-checked:block
+      z-0
+    "></label>
+  </div>
+
+
+
 </nav>
 
  
