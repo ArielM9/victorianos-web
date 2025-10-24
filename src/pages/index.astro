@@ -1,9 +1,13 @@
 ---
+import Hero from "../components/Hero.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
 import "../styles/global.css"
+import '@fontsource/luckiest-guy';
+
+
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image" href="/images/victoriano-200x200.png" />
@@ -11,12 +15,15 @@ import "../styles/global.css"
 		<meta name="generator" content={Astro.generator} />
 		<title>CR Victorianos</title>
 	</head>
-	<body class="bg-victoriano-gray">
+	<body class="bg-victoriano-blue text-shadow-victoriano-lightyellow" >
 		<BaseLayout title="">
-			<h1>Club de rugby Victorianos</h1>
-			<h2>Index</h2>
-
+			<Hero/>
+			<h1>Breve club</h1>
 			
+			<h1>Cifras escuelita + horarios entrenamiento</h1>
+			<h1>valores y mierdas</h1>
+			<h1>Patrocinadores</h1>
+			<h1>Footer</h1>
 		 </BaseLayout>
 	</body>
 </html>

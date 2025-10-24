@@ -6,20 +6,21 @@ const {pathname} = Astro.url
 const currentPath = pathname
 ---
 
- <nav class="w-full bg-victoriano-lightyellow p-2 flex justify-between shadow">
+ <nav class="w-full bg-victoriano-lightyellow p-2 flex justify-between shadow z-50 font-club">
   <a href="/" class="flex items-center">
     <Image src={logo} alt="CR Victoriano" width="50" height="50"/>
-      <h1 class="text-victoriano-blue font-bold items-center px-2 text-2xl ">CR Victoriano</h1>
+      <h1 class="text-victoriano-blue font-club items-center px-2 text-2xl ">CR VICTORIANOS</h1>
   </a>
   
   
   <div class="hidden md:flex px-5 gap-6 items-center">
     
     <a href="/club" class="
+      -skew-x-12
       text-xl
       text-victoriano-blue
       p-2  
-      transition-all 
+      transition-all  
       duration-200 
       hover:-skew-x-12
       hover:scale-130
@@ -30,10 +31,11 @@ const currentPath = pathname
       flex
       items-center
     ">
-      El Club
+      CLUB
     </a>
 
     <a href="/escuelita" class="
+    -skew-x-12
       text-xl
       text-victoriano-blue
       p-2  
@@ -49,10 +51,11 @@ const currentPath = pathname
       items-center
       
     ">
-      La Escuelita
+      ESCUELITA
     </a>
 
     <a href="/agenda" class="
+    -skew-x-12
       text-xl
       text-victoriano-blue
       p-2  
@@ -68,12 +71,13 @@ const currentPath = pathname
       items-center
       
     ">
-      Agenda
+      AGENDA
     </a>
     
    
 
     <a href="/tienda" class="
+    -skew-x-12
       text-xl
       text-victoriano-blue
       p-2  
@@ -90,10 +94,11 @@ const currentPath = pathname
       
       
     ">
-      Tienda
+      TIENDA
     </a>
 
      <a href="/contacto" class="
+     -skew-x-12
       text-xl
       text-victoriano-blue
       p-2  
@@ -110,7 +115,7 @@ const currentPath = pathname
       items-center
       
     ">
-      Contacto
+      CONTACTO
     </a>
 
     
@@ -119,7 +124,7 @@ const currentPath = pathname
 
 <!-- // Menu hamburguesa -->
 
-<div class="md:hidden flex items-center">
+<div class="md:hidden flex items-center z-50">
     <!-- Checkbox invisible que controla el estado -->
     <input type="checkbox" id="menu-toggle" class="hidden peer" />
 

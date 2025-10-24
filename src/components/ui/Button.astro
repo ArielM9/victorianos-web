@@ -1,0 +1,52 @@
+---
+interface Props {
+  title: string,
+  primary?: boolean,
+  href?: string,
+  type?: "button" | "submit" | "reset"
+}
+
+const {title, primary = false, href, type="button"} = Astro.props
+---
+
+<button
+type={type}
+class={`
+  relative
+  px-5
+  py-2
+  text-2xl
+  transition-all
+  duration-300
+  font-club
+  h-14
+  win-w-[12rem]
+  items-center
+  flex
+  justify-center
+  m-4
+  overflow-hidden
+  group
+
+  -skew-x-12
+  hover:cursor-pointer
+  text-victoriano-blue
+
+  ${primary 
+      ? `
+        bg-victoriano-lightyellow
+        hover:bg-victoriano-blue
+        hover:text-victoriano-lightyellow
+        border-2 border-victoriano-lightyellow 
+      ` 
+      : `
+        bg-transparent
+        border-2 border-victoriano-lightyellow 
+        text-victoriano-lightyellow            
+        hover:bg-victoriano-blue
+      `
+    }
+`}>
+   <span class="block relative z-10"> {title}
+  </span>
+</button>
