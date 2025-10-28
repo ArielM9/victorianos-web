@@ -20,7 +20,7 @@ const upcomingMatches = agendaData
     return matchDateTime > now;
 })
 
-console.log(upcomingMatches)
+
 
 upcomingMatches.sort((a, b) => {
 	const dateA = new Date(`${a.fecha}T${a.hora}:00`);
@@ -28,7 +28,7 @@ upcomingMatches.sort((a, b) => {
 
 	return dateA.getTime() - dateB.getTime();
 	});
-console.log(upcomingMatches)
+
 
 const nextMatch = upcomingMatches[0];
 ---
