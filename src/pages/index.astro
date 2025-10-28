@@ -9,26 +9,28 @@ import agendaData from '../data/agenda.json';
 import type { MatchData } from '../types/agenda.d.ts';
 
 
-// // Lógica de filtrado para encontrar el Próximo Partido
-// const now = new Date();
+//Lógica de filtrado para encontrar el Próximo Partido
+const now = new Date();
 
-// const upcomingMatches: MatchData[] = agendaData
-//     .filter((match: MatchData) => {
+const upcomingMatches = agendaData
+     .filter(match => {
                 
-//         // Combina fecha y hora para una comparación precisa
-//         const matchDateTime = new Date(`${match.fecha}T${match.hora}:00`); 
-//         return matchDateTime > now;
-//     })
-//     .sort((a: MatchData, b: MatchData) => {
-//         // Ordena para que el partido más cercano sea el primero
-//         const dateA = new Date(`${a.fecha}T${a.hora}:00`);
-//         const dateB = new Date(`${b.fecha}T${b.hora}:00`);
-//         return dateA.getTime() - dateB.getTime();
+    // Combina fecha y hora para una comparación precisa
+    const matchDateTime = new Date(`${match.fecha}T${match.hora}:00`); 
+    return matchDateTime > now;
+})
 
+console.log(upcomingMatches)
 
-const nextMatch: MatchData | undefined = (agendaData as MatchData[]).find(match => match.id === 1);
+upcomingMatches.sort((a, b) => {
+	const dateA = new Date(`${a.fecha}T${a.hora}:00`);
+    const dateB = new Date(`${b.fecha}T${b.hora}:00`);
 
-const matchToRender: MatchData | undefined = nextMatch || (agendaData as MatchData[])[0];
+	return dateA.getTime() - dateB.getTime();
+	});
+console.log(upcomingMatches)
+
+const nextMatch = upcomingMatches[0];
 ---
 
 <html lang="es">
@@ -44,14 +46,14 @@ const matchToRender: MatchData | undefined = nextMatch || (agendaData as MatchDa
 			<Hero/>
 			<!-- Prómo partido -->
 			<section class="max-w-7xl mx-auto py-12 px-4">
-				<h2 class="text-3xl font-headline font-bold text-center mb-8 text-club-blue">
-					Próximo Partido (Diseño Visual)
+				<h2 class="text-3xl font-headline font-bold text-center mb-8 text-victoriano-yellow">
+					Próximo Partido
 				</h2>
 				
 				<div class="flex justify-center">
-					{matchToRender ? (
+					{nextMatch ? (
 						/* Renderiza el componente CardMatch con los datos fijos */
-						<CardMatch match={matchToRender} />
+						<CardMatch match={nextMatch} />
 					) : (
 						/* Mensaje de alternativa si el ID 2 no existe en el JSON */
 						<div class="p-6 bg-gray-100 rounded-lg text-center">
@@ -61,7 +63,7 @@ const matchToRender: MatchData | undefined = nextMatch || (agendaData as MatchDa
 				</div>
 
 				<div class="text-center mt-8">
-					<a href="/agenda" class="bg-club-blue text-white py-3 px-6 rounded-lg font-body font-semibold hover:bg-club-yellow hover:text-club-blue transition duration-300 shadow-lg">
+					<a href="/agenda" class="bg-club-blue text-victoriano-lightyellow py-3 px-6 rounded-lg font-body font-semibold hover:bg-club-yellow hover:text-club-blue transition duration-300 shadow-lg">
 						Ver Agenda Completa
 					</a>
 				</div>
