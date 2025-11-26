@@ -20,6 +20,18 @@ const rivalData = {
     logo: match.logo_rival 
 };
 
+
+// 1. Obtener la cadena de fecha ISO (ej: "2025-11-16")
+const isoDate = match.fecha; 
+
+// 2. Partir la cadena en sus componentes [AAAA, MM, DD]
+// El método split('-') la divide por el guion.
+const [year, month, day] = isoDate.split('-');
+
+// 3. Reensamblar en el formato DD-MM-AAAA
+const formattedDate = `${day}-${month}-${year}`; 
+
+
 // 3. Asignación de Roles (Local vs. Visitante)
 const localTeam = match.esLocal ? victorianosData : rivalData;
 const awayTeam = match.esLocal ? rivalData : victorianosData;
@@ -30,7 +42,7 @@ const hora = match.hora;
 const tipoPartido = match.tipo;
 
 ---
-<div class="w-full max-w-lg mx-auto p-4 md:p-6 bg-white border border-gray-200 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.01]">
+<div class="w-full max-w-xl mx-auto p-4 md:p-6 bg-white border border-gray-200 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.01]">
     
     <div class="flex items-center justify-between w-full">
 
@@ -56,7 +68,7 @@ const tipoPartido = match.tipo;
                 </div>
             )}
             
-            <p class="text-sm mt-3 text-gray-600 font-body">{match.fecha}</p>
+            <p class="text-sm mt-3 text-gray-600 font-body">{formattedDate}</p>
             <p class="text-xs text-gray-500 font-body">{ubicacion}</p>
         </div>
 

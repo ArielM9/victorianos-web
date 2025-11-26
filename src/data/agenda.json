@@ -10,7 +10,7 @@
     "esLocal": false,
     "rival": "Jaén Rugby",
     "logo_rival":"jaen.png" ,
-    "logo_victorianos": "victoriano.png",
+    "logo_victorianos": "victoriano.webp",
     "resultado": {
       "rival": 0,
       "victorianos": 70
@@ -28,22 +28,25 @@
     "esLocal": false,
     "rival": "CR Málaga",
     "logo_rival":"crm.png",
-    "logo_victorianos": "victoriano.png",
-    "resultado": null,
+    "logo_victorianos": "victoriano.webp",
+    "resultado": {
+      "rival": 25,
+      "victorianos": 10
+    },
     "link_youtube": null
   },
   {
     "id": 3,
     "equipo": "Senior",
-    "fecha": "2025-11-23",
-    "hora": "12:00",
+    "fecha": "2025-11-29",
+    "hora": "18:00",
     "tipo": "Partido",
     "titulo": "Jornada 3: Victorianos vs Granada Rugby",
     "ubicacion": "Campo Manuel Becerra, Rincón de la Victoria", 
     "esLocal": true,
     "rival": "Granada Rugby",
     "logo_rival":"ugr.png",
-    "logo_victorianos": "victoriano.png",
+    "logo_victorianos": "victoriano.webp",
     "resultado": null,
     "link_youtube": null
   },
@@ -58,7 +61,7 @@
     "esLocal": false,
     "rival": "Escoriones",
     "logo_rival":"escoriones.png",
-    "logo_victorianos": "victoriano.png",
+    "logo_victorianos": "victoriano.webp",
     "resultado": null,
     "link_youtube": null
   },
@@ -73,7 +76,7 @@
     "esLocal": true,
     "rival": "Jaén Rugby",
     "logo_rival":"jaen.png",
-    "logo_victorianos": "victoriano.png",
+    "logo_victorianos": "victoriano.webp",
     "resultado": null,
     "link_youtube": null
   },
@@ -88,7 +91,7 @@
     "esLocal": true,
     "rival": "CR Málaga",
     "logo_rival":"crm.png",
-    "logo_victorianos": "victoriano.png",
+    "logo_victorianos": "victoriano.webp",
     "resultado": null,
     "link_youtube": null
   },
@@ -103,7 +106,7 @@
     "esLocal": false,
     "rival": "Granada Rugby",
     "logo_rival":"ugr.png",
-    "logo_victorianos": "victoriano.png",
+    "logo_victorianos": "victoriano.webp",
     "resultado": null,
     "link_youtube": null
   },
@@ -118,7 +121,7 @@
     "esLocal": true,
     "rival": "Escoriones",
     "logo_rival":"escoriones.png",
-    "logo_victorianos": "victoriano.png",
+    "logo_victorianos": "victoriano.webp",
     "resultado": null,
     "link_youtube": null
   },

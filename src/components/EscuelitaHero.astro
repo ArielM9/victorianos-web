@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets";
+import Button from "./ui/Button.astro";
+
+import foto1 from "../../public/images/494697429_1237727098360504_4329431527100418984_n.jpg";
+import foto2 from "../../public/images/_RRN8680.jpg";
+
+import mascara from "../../public/apoyo/mancha victoriano 1.png";
+---
+
+<section id="escuelita" class="max-w-7xl mx-auto py-16 px-4">
+    <h2
+        class="text-4xl font-headline font-bold text-center mb-12 text-victoriano-yellow"
+    >
+        La Escuelita: Formando a los Próximos Victorianos
+    </h2>
+
+    <div class="space-y-20">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center"
+        >
+            <div>
+                <h3
+                    class="text-3xl font-headline font-semibold text-victoriano-lightyellow mb-4"
+                >
+                    Comunidad y Valores desde el primer día
+                </h3>
+                <p class="text-victoriano-lightyellow mb-6">
+                    Nuestro foco no está solo en el juego, sino en la persona.
+                    En La Escuelita, tus hijos aprenderán el respeto, la
+                    disciplina y el trabajo en equipo, valores fundamentales del
+                    rugby y del Club Victorianos.
+                </p>
+                <div>
+                    <Button
+                        title="Descubre mas"
+                        href="/"
+                        type="button"
+                        primary="true/"
+                    />
+                </div>
+            </div>
+
+            <div class="mask-victorianos md:order-2 order-first">
+                <Image src={foto1} alt={"Equipo M16"} class="w-xl" />
+            </div>
+        </div>
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center"
+        >
+            <div class="mask-victorianos">
+                <Image src={foto1} alt={"Foto charla Pablo"} />
+            </div>
+            <div>
+                <h3
+                    class="text-3xl font-headline font-semibold text-victoriano-lightyellow mb-4"
+                >
+                    De 4 a 18 años: La Categoría perfecta
+                </h3>
+                <p class="text-victoriano-lightyellow mb-6">
+                    Ofrecemos entrenamiento adaptado a cada etapa de desarrollo,
+                    desde la iniciación con el *touch rugby* hasta el contacto
+                    total. En Victorianos, nadie se queda fuera, ¡es un deporte
+                    para todos los cuerpos!
+                </p>
+                <div class="flex justify-end">
+                    <Button title="Ver Horarios y Edades" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* La ruta DEBE ser la ruta pública raíz, que ya comprobaste. */
+    .mask-victorianos {
+        /* Para navegadores basados en Webkit (Chrome, Safari, Edge) */
+        -webkit-mask-image: url("/apoyo/mancha-v3.png");
+        -webkit-mask-size: 200% 100%;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+
+        /* Implementación estándar (para Firefox y otros) */
+        mask-image: url("/apoyo/mancha-v3.png");
+        mask-size: 200% 100%;
+        mask-repeat: no-repeat;
+        mask-position: center;
+
+        /* Opcional: Si tu PNG usa transparencia para la forma (y no blanco/negro), 
+           esto fuerza al navegador a usar el canal alfa para la máscara. */
+        mask-mode: alpha;
+        -webkit-mask-mode: alpha;
+    }
+</style>

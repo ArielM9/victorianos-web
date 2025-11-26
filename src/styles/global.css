@@ -1,7 +1,13 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
-
+@font-face {
+  font-family: 'adumu';
+  src: url('../../public/fonts/Adumu.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme {
     --color-victoriano-blue: #1348AE;
@@ -12,5 +18,5 @@
     --color-victoriano-gray: #6B7280;
     --color-victoriano-lightgray: #F3F4F6;
 
-    --font-club: "Luckiest Guy", "cursive";
+    --font-club: "adumu","Luckiest Guy", "cursive";
 }

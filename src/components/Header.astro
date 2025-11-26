@@ -1,11 +1,11 @@
 ---
 import Image from "astro/components/Image.astro";
-import logo from "../../public/images/victoriano-200x200.png"
+import logo from "../../public/logos/victoriano.webp"
 
 const {pathname} = Astro.url
 const currentPath = pathname
 ---
-
+<header class="fixed top-0 w-full bg-gray-900 text-white z-50">
  <nav class="w-full bg-victoriano-lightyellow p-2 flex justify-between shadow z-50 font-club">
   <a href="/" class="flex items-center">
     <Image src={logo} alt="CR Victoriano" width="50" height="50"/>
@@ -13,23 +13,26 @@ const currentPath = pathname
   </a>
   
   
-  <div class="hidden md:flex px-5 gap-6 items-center">
+  
+  <div class="hidden md:flex px-5 gap-6 items-center h-full">
     
     <a href="/club" class="
       -skew-x-12
       text-xl
       text-victoriano-blue
-      p-2  
+      p-2
       transition-all  
       duration-200 
+      flex
+      items-center
+
       hover:-skew-x-12
       hover:scale-130
       hover:bg-victoriano-blue
       hover:text-victoriano-lightyellow
       hover: font-bold
-      h-full
-      flex
-      items-center
+      h-full 
+      felx-1
     ">
       CLUB
     </a>
@@ -239,8 +242,16 @@ const currentPath = pathname
     "></label>
   </div>
 
-
+<!-- <div class="flex gap-2 items-center ">
+    <a class="hover:">
+      <Image src={logo} alt="instagram" width="40" height="40" />
+    </a>
+    <a>
+      <Image src={logo} alt="instagram" width="40" height="40" />
+    </a>
+  </div> -->
 
 </nav>
+</header>
 
  

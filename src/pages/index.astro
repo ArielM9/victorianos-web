@@ -7,6 +7,7 @@ import '@fontsource/luckiest-guy';
 
 import agendaData from '../data/agenda.json';
 import type { MatchData } from '../types/agenda.d.ts';
+import EscuelitaHero from "../components/EscuelitaHero.astro";
 
 
 //Lógica de filtrado para encontrar el Próximo Partido
@@ -68,6 +69,8 @@ const nextMatch = upcomingMatches[0];
 					</a>
 				</div>
 			</section>
+
+			<EscuelitaHero/>
 
 			<h1>Breve club</h1>
 			
