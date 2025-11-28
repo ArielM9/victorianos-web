@@ -93,27 +93,3 @@ const socialLinks = [
 
 </style>
 
-<style>
-    /* CSS de la máscara aplicado a la sección */
-    .mask-partido-section {
-        /* 1. Imagen de la máscara */
-        -webkit-mask-image: url('/apoyo/mascara-ancha.png'); 
-        mask-image: url('/apoyo/mascara-ancha.png');
-        
-        /* 2. ESCALADO DE DESBORDE: Ajusta estos valores para el tamaño visual deseado */
-        /* Si quieres que ocupe el 70% del viewport, usa un valor superior a 100% 
-           para forzar el desborde (ej. 150% 150%) y luego céntrala. */
-        -webkit-mask-size: 100% 100%; 
-        mask-size: 120% 300%;
-        
-        /* 3. Posición: Mueve la máscara grande para centrar la zona visible */
-        -webkit-mask-position: center center; 
-        mask-position: center center;
-        
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        
-        mask-mode: alpha;
-        -webkit-mask-mode: alpha;
-    }
-</style>
