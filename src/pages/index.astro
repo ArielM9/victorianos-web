@@ -8,6 +8,10 @@ import '@fontsource/luckiest-guy';
 import agendaData from '../data/agenda.json';
 import type { MatchData } from '../types/agenda.d.ts';
 import EscuelitaHero from "../components/EscuelitaHero.astro";
+import ClubHero from "../components/ClubHero.astro";
+import Sponsors from "../components/Sponsors.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
 
 
 //Lógica de filtrado para encontrar el Próximo Partido
@@ -45,16 +49,26 @@ const nextMatch = upcomingMatches[0];
 	<body class="bg-victoriano-blue text-shadow-victoriano-lightyellow" >
 		<BaseLayout title="">
 			<Hero/>
+
+			<ClubHero />
 			<!-- Prómo partido -->
-			<section class="max-w-7xl mx-auto py-12 px-4">
+			
+			<section class="w-full mx-auto py-12 px-4">
 				<h2 class="text-3xl font-headline font-bold text-center mb-8 text-victoriano-yellow">
 					Próximo Partido
 				</h2>
 				
-				<div class="flex justify-center">
+				<div class="flex justify-center 
+				mask-partido-section 
+        		relative 
+        		overflow-visible 
+        		w-full mx-auto py-12 px-4 md:w-5xl
+       			 bg-white 
+        
+    ">
 					{nextMatch ? (
 						/* Renderiza el componente CardMatch con los datos fijos */
-						<CardMatch match={nextMatch} />
+						<CardMatch match={nextMatch} variant="plain"/>
 					) : (
 						/* Mensaje de alternativa si el ID 2 no existe en el JSON */
 						<div class="p-6 bg-gray-100 rounded-lg text-center">
@@ -62,22 +76,44 @@ const nextMatch = upcomingMatches[0];
 						</div>
 					)}
 				</div>
+				
 
-				<div class="text-center mt-8">
-					<a href="/agenda" class="bg-club-blue text-victoriano-lightyellow py-3 px-6 rounded-lg font-body font-semibold hover:bg-club-yellow hover:text-club-blue transition duration-300 shadow-lg">
-						Ver Agenda Completa
-					</a>
+				<div class="flex justify-center text-center mt-8">
+					<Button title="Ver Agenda Completa" href="/agenda" />
 				</div>
 			</section>
-
-			<EscuelitaHero/>
-
-			<h1>Breve club</h1>
 			
-			<h1>Cifras escuelita + horarios entrenamiento</h1>
-			<h1>valores y mierdas</h1>
-			<h1>Patrocinadores</h1>
-			<h1>Footer</h1>
+			<EscuelitaHero/>
+			
+				<Sponsors/>
+			
+			
 		 </BaseLayout>
 	</body>
 </html>
+
+
+<style>
+    /* CSS de la máscara aplicado a la sección */
+    .mask-partido-section {
+        /* 1. Imagen de la máscara */
+        -webkit-mask-image: url('/apoyo/mascara-ancha.png'); 
+        mask-image: url('/apoyo/mascara-ancha.png');
+        
+        /* 2. ESCALADO DE DESBORDE: Ajusta estos valores para el tamaño visual deseado */
+        /* Si quieres que ocupe el 70% del viewport, usa un valor superior a 100% 
+           para forzar el desborde (ej. 150% 150%) y luego céntrala. */
+        -webkit-mask-size: 100% 100%; 
+        mask-size: 90% 200%;
+        
+        /* 3. Posición: Mueve la máscara grande para centrar la zona visible */
+        -webkit-mask-position: center center; 
+        mask-position: center center;
+        
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        
+        mask-mode: alpha;
+        -webkit-mask-mode: alpha;
+    }
+</style>

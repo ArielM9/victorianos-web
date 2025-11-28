@@ -4,10 +4,11 @@ import type { MatchData } from '../types/agenda';
 
 interface Props {
     match: MatchData;
+    variant?: "default" | "plain";
 }
 
 // Desestructuración de las props tipadas
-const { match } = Astro.props; 
+const { match, variant = "default" } = Astro.props; 
 
 const victorianosData = { 
     name: "Victorianos", 
@@ -42,17 +43,23 @@ const hora = match.hora;
 const tipoPartido = match.tipo;
 
 ---
-<div class="w-full max-w-xl mx-auto p-4 md:p-6 bg-white border border-gray-200 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.01]">
-    
-    <div class="flex items-center justify-between w-full">
 
+<div class={
+    variant === "default"
+    ? "w-full max-w-xl mx-auto p-4 md:p-6 bg-white border border-gray-200 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] "
+    : "w-full max-w-xl mx-auto p-6 md:p-6"
+}>
+    <div class={
+    variant === "default"
+    ?"flex items-center justify-between w-full "
+    :"flex items-center justify-between w-full pb-8"}>        
         <div class="flex flex-col items-center w-1/4 text-center">
-            <img src={`/logos/${localTeam.logo}`} alt={localTeam.name} class="h-16 md:h-20 w-16 md:w-20 object-contain" />
+            <img src={`/logos/${localTeam.logo}`} alt={localTeam.name} class="h-16 md:h-24 w-16 md:w-24 object-contain" />
             <p class="mt-2 text-sm font-semibold text-club-blue font-headline">{localTeam.name}</p>
             <span class="text-xs text-gray-500 mt-1">Local</span>
         </div>
 
-        <div class="flex flex-col items-center w-1/2 text-center px-2">
+        <div class="flex flex-col items-center w-3/4 text-center px-2">
             
             <p class="text-xs uppercase font-bold text-club-yellow bg-club-blue px-2 py-0.5 rounded-full mb-3 shadow-md">{tipoPartido}</p>
             
@@ -73,7 +80,7 @@ const tipoPartido = match.tipo;
         </div>
 
         <div class="flex flex-col items-center w-1/4 text-center">
-            <img src={`/logos/${awayTeam.logo}`} alt={awayTeam.name} class="h-16 md:h-20 w-16 md:w-20 object-contain" />
+            <img src={`/logos/${awayTeam.logo}`} alt={awayTeam.name} class="h-16 md:h-24 w-16 md:w-24 object-contain" />
             <p class="mt-2 text-sm font-semibold text-gray-800 font-headline">{awayTeam.name}</p>
             <span class="text-xs text-gray-500 mt-1">Visitante</span>
         </div>
@@ -81,9 +88,13 @@ const tipoPartido = match.tipo;
     
     {(match.resultado && match.link_youtube) && (
         <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+            
             <a href={match.link_youtube} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-red-600 hover:text-red-700 transition flex items-center justify-center">
                  Ver Partido Completo
             </a>
+
         </div>
     )}
 </div>
+
+

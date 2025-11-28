@@ -1,0 +1,119 @@
+---
+import { Image } from 'astro:assets';
+
+// Datos de navegación secundaria
+const navLinks = [
+  { name: "El Club", href: "/club" },
+  { name: "Escuelita", href: "/escuelita" },
+  { name: "Agenda", href: "/agenda" },
+  { name: "Tienda", href: "/tienda" },
+  { name: "Contacto", href: "/contacto" }
+];
+
+// Redes sociales
+const socialLinks = [
+  { name: "Instagram", href: "https://instagram.com/tu_club", icon: "/apoyo/instagram.svg" },
+  { name: "Facebook", href: "https://facebook.com/tu_club", icon: "/apoyo/facebook.svg" }
+];
+
+
+---
+
+<footer class="mask-footer ">
+    <div class="w-full bg-white text-gray-700 border-t border-gray-200 md:pt-20 pt-50">
+  <!-- Sección principal -->
+  <div class="max-w-7xl mx-auto px-4 py-12 flex flex-col md:flex-row md:justify-between md:items-start gap-10">
+
+    <!-- Contacto -->
+    <div class="flex-1">
+      <h3 class="text-lg font-semibold mb-4">Contacto</h3>
+      <p class="text-sm mb-2">Para información sobre la escuelita y el club, visita nuestra <a href="/contacto" class="text-club-blue underline">página de contacto</a>.</p>
+      <p class="text-sm">Dirección y mapa disponibles allí.<span><Image src={"/apoyo/Map.svg"} alt="mapa" width={24} height={24}/></span></p> 
+      <!-- <Image src={"/apoyo/Map.svg"} alt="mapa" width={24} height={24}/> -->
+    </div>
+
+    <!-- Navegación secundaria -->
+    <div class="flex-1">
+      <h3 class="text-lg font-semibold mb-4">Navegación</h3>
+      <ul class="space-y-2">
+        {navLinks.map(link => (
+          <li>
+            <a href={link.href} class="text-sm hover:text-club-blue transition">{link.name}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="flex-1 flex-col">
+      <h3 class="text-lg font-semibold mb-4">Síguenos</h3>
+      <div class="flex flex-col space-x-4">
+        {socialLinks.map(social => (
+          <a href={social.href} target="_blank" rel="noopener noreferrer" title={social.name} class="transition hover:scale-110 flex gap-2 mt-2">
+            <Image src={social.icon} alt={social.name} width={24} height={24} />
+            <p>{social.name}</p>
+          </a>
+          
+        ))}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Separador opcional -->
+  <div class="border-t border-gray-200"></div>
+
+  <!-- Sección inferior -->
+  <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+    <p>© 2025 Club Rugby Rincón de la Victoria. Todos los derechos reservados.</p>
+    <p>Diseño web por Ariel Marchegiani</p>
+  </div>
+  </div>
+</footer>
+
+
+<style>
+   /* CSS de la máscara aplicado a la sección */
+    .mask-footer {
+    -webkit-mask-image: url("/apoyo/mascara-footer.png"); 
+    mask-image: url("/apoyo/mascara-footer.png");
+
+    -webkit-mask-size: 120% 100%; /* 200% del contenido, ajusta según necesites */
+    mask-size: 112% 270%;
+
+    -webkit-mask-positsion: center bottom; 
+    mask-position: center bottom;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-mode: alpha;
+    mask-mode: alpha;
+    }
+
+</style>
+
+<style>
+    /* CSS de la máscara aplicado a la sección */
+    .mask-partido-section {
+        /* 1. Imagen de la máscara */
+        -webkit-mask-image: url('/apoyo/mascara-ancha.png'); 
+        mask-image: url('/apoyo/mascara-ancha.png');
+        
+        /* 2. ESCALADO DE DESBORDE: Ajusta estos valores para el tamaño visual deseado */
+        /* Si quieres que ocupe el 70% del viewport, usa un valor superior a 100% 
+           para forzar el desborde (ej. 150% 150%) y luego céntrala. */
+        -webkit-mask-size: 100% 100%; 
+        mask-size: 120% 300%;
+        
+        /* 3. Posición: Mueve la máscara grande para centrar la zona visible */
+        -webkit-mask-position: center center; 
+        mask-position: center center;
+        
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        
+        mask-mode: alpha;
+        -webkit-mask-mode: alpha;
+    }
+</style>

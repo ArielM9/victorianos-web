@@ -1,0 +1,38 @@
+---
+import Image from "astro/components/Image.astro";
+import sponsors from "../data/sponsors.json";
+---
+
+<section class="w-full py-12 bg-victoriano-blue">
+  <div class="max-w-7xl mx-auto px-4">
+    
+    <h2 class="text-center text-2xl font-headline text-victoriano-yellow mb-10">
+      Patrocinadores Oficiales
+    </h2>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-8">
+
+      {sponsors.map((sponsor) => (
+        <a 
+          href={sponsor.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-center transition duration-300
+                  hover:grayscale-0 
+                 hover:scale-[1.5]
+                 hover:shadow-lg
+                 md:opacity-80 md:hover:opacity-100"
+        >
+          <Image
+            src={sponsor.logo}
+            alt={sponsor.name}
+            width={200}  
+            height={100}
+            class="max-h-20 sm:max-h-24 lg:max-h-28 object-contain rounded-md"
+          />
+        </a>
+      ))}
+
+    </div>
+  </div>
+</section>
