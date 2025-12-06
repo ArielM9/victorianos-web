@@ -1,119 +1,104 @@
 ---
 import CardMatch from "../components/CardMatch.astro";
-import Hero from "../components/Hero.astro"
-import BaseLayout from "../layouts/BaseLayout.astro"
-import "../styles/global.css"
-import '@fontsource/luckiest-guy';
+import Hero from "../components/Hero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
 
-import agendaData from '../data/agenda.json';
-import type { MatchData } from '../types/agenda.d.ts';
+import agendaData from "../data/agenda.json";
 import EscuelitaHero from "../components/EscuelitaHero.astro";
 import ClubHero from "../components/ClubHero.astro";
 import Sponsors from "../components/Sponsors.astro";
-import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
-
 
 //Lógica de filtrado para encontrar el Próximo Partido
 const now = new Date();
 
-const upcomingMatches = agendaData
-     .filter(match => {
-                
-    // Combina fecha y hora para una comparación precisa
-    const matchDateTime = new Date(`${match.fecha}T${match.hora}:00`); 
-    return matchDateTime > now;
-})
-
-
+const upcomingMatches = agendaData.filter((match) => {
+	// Combina fecha y hora para una comparación precisa
+	const matchDateTime = new Date(`${match.fecha}T${match.hora}:00`);
+	return matchDateTime > now;
+});
 
 upcomingMatches.sort((a, b) => {
 	const dateA = new Date(`${a.fecha}T${a.hora}:00`);
-    const dateB = new Date(`${b.fecha}T${b.hora}:00`);
+	const dateB = new Date(`${b.fecha}T${b.hora}:00`);
 
 	return dateA.getTime() - dateB.getTime();
-	});
-
+});
 
 const nextMatch = upcomingMatches[0];
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image" href="/images/victoriano-200x200.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>CR Victorianos</title>
-	</head>
-	<body class="bg-victoriano-blue text-shadow-victoriano-lightyellow" >
-		<BaseLayout title="">
-			<Hero/>
+<div class="bg-victoriano-blue text-shadow-victoriano-lightyellow">
+	<BaseLayout title="">
+		<Hero />
 
-			<ClubHero />
-			<!-- Prómo partido -->
-			
-			<section class="w-full mx-auto py-12 px-4">
-				<h2 class="text-3xl font-headline font-bold text-center mb-8 text-victoriano-yellow">
-					Próximo Partido
-				</h2>
-				
-				<div class="flex justify-center 
-				mask-partido-section 
-        		relative 
-        		overflow-visible 
-        		w-full mx-auto py-12 px-4 md:w-5xl
-       			 bg-white 
-        
-    ">
-					{nextMatch ? (
+		<ClubHero />
+		<!-- Prómo partido -->
+
+		<section class="w-full mx-auto py-12 px-4">
+			<h2
+				class="text-3xl font-headline font-bold text-center mb-8 text-victoriano-yellow"
+			>
+				Próximo Partido
+			</h2>
+
+			<div
+				class="flex justify-center
+				mask-partido-section
+        		relative
+        		overflow-visible
+        		w-full mx-auto py-8 px-4 md:w-5xl
+       			 bg-white"
+			>
+				{
+					nextMatch ? (
 						/* Renderiza el componente CardMatch con los datos fijos */
-						<CardMatch match={nextMatch} variant="plain"/>
+						<CardMatch match={nextMatch} variant="plain" />
 					) : (
 						/* Mensaje de alternativa si el ID 2 no existe en el JSON */
 						<div class="p-6 bg-gray-100 rounded-lg text-center">
-							<p class="text-lg text-gray-700">Error: El partido con ID 2 no se ha encontrado en la agenda.json.</p>
+							<p class="text-lg text-gray-700">
+								Error: El partido con ID 2 no se ha encontrado
+								en la agenda.json.
+							</p>
 						</div>
-					)}
-				</div>
-				
+					)
+				}
+			</div>
 
-				<div class="flex justify-center text-center mt-8">
-					<Button title="Ver Agenda Completa" href="/agenda" />
-				</div>
-			</section>
-			
-			<EscuelitaHero/>
-			
-				<Sponsors/>
-			
-			
-		 </BaseLayout>
-	</body>
-</html>
+			<div class="flex justify-center text-center mt-8">
+				<Button title="Ver Agenda Completa" href="/agenda" />
+			</div>
+		</section>
 
+		<EscuelitaHero />
+
+		<Sponsors />
+	</BaseLayout>
+</div>
 
 <style>
-    /* CSS de la máscara aplicado a la sección */
-    .mask-partido-section {
-        /* 1. Imagen de la máscara */
-        -webkit-mask-image: url('/apoyo/mascara-ancha.png'); 
-        mask-image: url('/apoyo/mascara-ancha.png');
-        
-        /* 2. ESCALADO DE DESBORDE: Ajusta estos valores para el tamaño visual deseado */
-        /* Si quieres que ocupe el 70% del viewport, usa un valor superior a 100% 
+	/* CSS de la máscara aplicado a la sección */
+	.mask-partido-section {
+		/* 1. Imagen de la máscara */
+		-webkit-mask-image: url("/apoyo/mascara-ancha.png");
+		mask-image: url("/apoyo/mascara-ancha.png");
+
+		/* 2. ESCALADO DE DESBORDE: Ajusta estos valores para el tamaño visual deseado */
+		/* Si quieres que ocupe el 70% del viewport, usa un valor superior a 100% 
            para forzar el desborde (ej. 150% 150%) y luego céntrala. */
-        -webkit-mask-size: 100% 100%; 
-        mask-size: 90% 200%;
-        
-        /* 3. Posición: Mueve la máscara grande para centrar la zona visible */
-        -webkit-mask-position: center center; 
-        mask-position: center center;
-        
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        
-        mask-mode: alpha;
-        -webkit-mask-mode: alpha;
-    }
+		-webkit-mask-size: 100% 100%;
+		mask-size: 90% 200%;
+
+		/* 3. Posición: Mueve la máscara grande para centrar la zona visible */
+		-webkit-mask-position: center center;
+		mask-position: center center;
+
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+
+		mask-mode: alpha;
+		-webkit-mask-mode: alpha;
+	}
 </style>

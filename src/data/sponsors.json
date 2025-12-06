@@ -1,47 +1,47 @@
 [
   {
     "name": "Sponsor 1",
-    "logo": "/sponsors/sponsor1-alpha.png",
+    "logo": "/sponsors/sponsor1-alpha.webp",
     "url": "https://www.sponsor1.com"
   },
   {
     "name": "Sponsor 2",
-    "logo": "/sponsors/sponsor2-alpha.png",
+    "logo": "/sponsors/sponsor2-alpha.webp",
     "url": "https://instagram.com/sponsor2"
   },
   {
     "name": "Sponsor 3",
-    "logo": "/sponsors/sponsor3-alpha.png",
+    "logo": "/sponsors/sponsor3-alpha.webp",
     "url": "https://instagram.com/sponsor2"
   },
   {
     "name": "Sponsor 4",
-    "logo": "/sponsors/sponsor4-alpha.png",
+    "logo": "/sponsors/sponsor4-alpha.webp",
     "url": "https://instagram.com/sponsor2"
   },
   {
     "name": "Sponsor 5",
-    "logo": "/sponsors/sponsor5-alpha.png",
+    "logo": "/sponsors/sponsor5-alpha.webp",
     "url": "https://instagram.com/sponsor2"
   },
   {
     "name": "Sponsor 6",
-    "logo": "/sponsors/sponsor6-alpha.png",
+    "logo": "/sponsors/sponsor6-alpha.webp",
     "url": "https://instagram.com/sponsor2"
   },
   {
     "name": "Sponsor 7",
-    "logo": "/sponsors/sponsor7-alpha.png",
+    "logo": "/sponsors/sponsor7-alpha.webp",
     "url": "https://instagram.com/sponsor2"
   },
   {
     "name": "Sponsor 8",
-    "logo": "/sponsors/sponsor8-alpha.png",
+    "logo": "/sponsors/sponsor8-alpha.webp",
     "url": "https://instagram.com/sponsor2"
   },
   {
     "name": "Sponsor 9",
-    "logo": "/sponsors/sponsor9-alpha.png",
+    "logo": "/sponsors/sponsor9-alpha.webp",
     "url": "https://instagram.com/sponsor2"
   }
 ]
