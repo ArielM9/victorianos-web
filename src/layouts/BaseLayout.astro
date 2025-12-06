@@ -20,15 +20,25 @@ const {title} = Astro.props
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image" href="/images/victoriano-200x200.png" />
+        <link rel="icon" type="image" href="/images/victoriano-200x200.webp" />
         <link 
         rel="preload" 
-        href="/public/fonts/Adamu.woff" 
+        href="/fonts/Adamu.woff2" 
         as="font" 
-        type="font/woff" 
+        type="font/woff2" 
         crossorigin
         />
+
+        <link rel="canonical" href="https://victorianos-web.netlify.app" />
+
+        <meta property="og:title" content="CR Victorianos" />
+        <meta property="og:description" content="La cantera y el club de rugby más activo de la Costa del Sol." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://victorianos-web.netlify.app" />
+        <meta property="og:image" content="https://victorianos-web.netlify.app/images/victoriano-200x200.webp" />
+
         <meta name="generator" content={Astro.generator} />
+        <meta name="description" content="Club de Rugby Victorianos, la cantera del rugby en Málaga. Únete a La Escuelita (4-18 años) o ven a animar a nuestros equipos. ¡Rugby y comunidad!" />
         <title>{title} | CR Victorianos</title>
     </head>
     <body class="w-full min-h-screen m-0 p-0">
