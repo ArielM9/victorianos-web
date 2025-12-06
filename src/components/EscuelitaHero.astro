@@ -4,6 +4,7 @@ import Button from "./ui/Button.astro";
 
 import foto1 from "../../public/images/494697429_1237727098360504_4329431527100418984_n.webp";
 import foto2 from "../../public/images/RRN8680.webp";
+import ButtonLink from "./ui/ButtonLink.astro";
 
 
 ---
@@ -33,14 +34,7 @@ import foto2 from "../../public/images/RRN8680.webp";
                     disciplina y el trabajo en equipo, valores fundamentales del
                     rugby y del Club Victorianos.
                 </p>
-                <div>
-                    <Button
-                        title="Descubre mas"
-                        href="/"
-                        type="button"
-                        
-                    />
-                </div>
+                
             </div>
 
             <div class="mask-victorianos md:order-2 order-first">
@@ -66,12 +60,13 @@ import foto2 from "../../public/images/RRN8680.webp";
                     total. En Victorianos, nadie se queda fuera, ¡es un deporte
                     para todos los cuerpos!
                 </p>
-                <div class="flex justify-end">
-                    <Button title="Ver Horarios" />
-                </div>
+               
             </div>
         </div>
     </div>
+     <div class="flex justify-center">
+                    <ButtonLink title="Mas información" href="/escuelita" primary/>
+        </div>
     </div>
 </section>
 

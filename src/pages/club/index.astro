@@ -1,9 +1,40 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-
-
+import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
+<BaseLayout title="Club y Misión">
+    <section class="max-w-7xl mx-auto py-16 px-4 font-club">
+        
+        <h1 class="text-4xl md:text-5xl font-headline text-center mb-16 text-victoriano-yellow font-extralight">
+            Nuestra Identidad: Más que un Club
+        </h1>
 
-<BaseLayout title="Club">
-    <h1>El club</h1>
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <p class="text-xl text-gray-300 font-extralight">
+                El Club de Rugby Victorianos, aunque joven, se ha consolidado como un referente de formación y comunidad en Málaga. Nuestra misión se basa en tres pilares que definen cada placaje y cada celebración.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="bg-gray-200 p-6 rounded-lg shadow-xl border-t-8 border-victoriano-yellow flex flex-col items-center text-center h-full">
+                <div class="text-5xl mb-4" aria-hidden="true">🫂</div>
+                <h3 class="text-xl font-headline font-extralight text-victoriano-blue mb-3">Familia Victoriana</h3>
+                <p class="text-gray-600 font-body flex-grow">Promovemos un entorno de apoyo mutuo e inclusión total. El tercer tiempo es tan importante como el partido. Aquí se hacen amistades para toda la vida.</p>
+            </div>
+            
+            <div class="bg-gray-200 p-6 rounded-lg shadow-xl border-t-8 border-victoriano-yellow flex flex-col items-center text-center h-full">
+                <div class="text-5xl mb-4" aria-hidden="true">⚡</div>
+                <h3 class="text-xl font-headline font-extralight text-victoriano-blue mb-3">Pasión y Esfuerzo</h3>
+                <p class="text-gray-600 font-body flex-grow">Exigimos la máxima dedicación en el entrenamiento y respeto en el juego. El trabajo duro y la disciplina son la base para el éxito dentro y fuera del campo.</p>
+            </div>
+            
+            <div class="bg-gray-200 p-6 rounded-lg shadow-xl border-t-8 border-victoriano-yellow flex flex-col items-center text-center h-full">
+                <div class="text-5xl mb-4" aria-hidden="true">🗺️</div>
+                <h3 class="text-xl font-headline font-extralight text-victoriano-blue mb-3">Compromiso Local</h3>
+                <p class="text-gray-600 font-body flex-grow">Somos la cantera del rugby malagueño. Nos comprometemos con el desarrollo deportivo de la ciudad, asegurando la continuidad y el desarrollo de talentos locales.</p>
+            </div>
+
+        </div>
+        
+    </section>
 </BaseLayout>

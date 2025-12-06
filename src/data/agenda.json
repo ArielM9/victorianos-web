@@ -47,8 +47,11 @@
     "rival": "Granada Rugby",
     "logo_rival":"ugr.png",
     "logo_victorianos": "victoriano.webp",
-    "resultado": null,
-    "link_youtube": null
+    "resultado": {
+      "rival": 10,
+      "victorianos": 33
+    },
+    "link_youtube": "https://www.youtube.com/live/eEaCq3coIoo?si=4YdlWkkdp4AKaO1_"
   },
   {
     "id": 5,

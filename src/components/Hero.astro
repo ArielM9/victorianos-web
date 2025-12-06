@@ -2,6 +2,7 @@
 import Image from "astro/components/Image.astro";
 import Button from "./ui/Button.astro";
 import '@fontsource/luckiest-guy';
+import ButtonLink from "./ui/ButtonLink.astro";
 
 const images = [
     '/images/481726162_18464240164068479_8647602654784967052_n.webp',
@@ -41,8 +42,8 @@ const images = [
 
                     </div >
                     <div class="flex md:flex-row items-center  md:items-center flex-col "> 
-                        <Button title="Únete al club" primary />
-                        <Button title="Próximo partido" />
+                        <ButtonLink title="Únete al club" primary href="/contacto"/>
+                        <ButtonLink title="Próximo partido" href="/agenda" />
                     </div>
                 
             

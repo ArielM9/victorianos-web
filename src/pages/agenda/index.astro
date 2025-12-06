@@ -1,11 +1,32 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+// src/pages/agenda/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CardMatch from '../../components/CardMatch.astro';
 
+// Importa los datos (asumiendo que está en el mismo nivel o lo ajustas)
+import agendaData from '../../data/agenda.json'; 
+import type { MatchData } from '../../types/agenda.d.ts';
 
-
+// Opcional: Si quieres ordenar todos los partidos por fecha
+const partidosOrdenados = agendaData.sort((a, b) => {
+	const dateA = new Date(`${a.fecha}T${a.hora}:00`);
+    const dateB = new Date(`${b.fecha}T${b.hora}:00`);
+	return dateA.getTime() - dateB.getTime();
+});
 
 ---
 
 <BaseLayout title="Agenda">
-    <h1>Agenda</h1>
+    <section class="max-w-7xl mx-auto py-16 px-4">
+        <h1 class="text-4xl font-headline font-extrabold text-center mb-12 text-victoriano-yellow">
+            Agenda de Partidos
+        </h1>
+
+        <div id="partidos-list" class="flex flex-col gap-8">
+            {partidosOrdenados.map((match: MatchData) => (
+                <CardMatch match={match} />
+            ))}
+        </div>
+    </section>
 </BaseLayout>
+

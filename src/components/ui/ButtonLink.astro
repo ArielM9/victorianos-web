@@ -2,15 +2,15 @@
 interface Props {
   title: string,
   primary?: boolean,
-  href?: string,
-  type?: "button" | "submit" | "reset"
+  href: string, 
 }
 
-const {title, primary = false, href, type="button"} = Astro.props
+const {title, primary = false, href} = Astro.props
+
 ---
 
-<button
-type={type}
+<a
+href={href}
 class={`
   relative
   px-5
@@ -20,18 +20,16 @@ class={`
   duration-300
   font-club
   h-14
-  win-w-[12rem] /* Tu clase original */
+  win-w-[12rem]
   items-center
   flex
   justify-center
   m-4
   overflow-hidden
   group
-
   -skew-x-12
   hover:cursor-pointer
   text-victoriano-blue
-
   ${primary 
       ? `
         bg-victoriano-lightyellow
@@ -42,11 +40,11 @@ class={`
       : `
         bg-transparent
         border-2 border-victoriano-lightyellow 
-        text-victoriano-lightyellow            
+        text-victoriano-lightyellow
         hover:bg-victoriano-blue
+        hover:text-victoriano-lightyellow
       `
     }
 `}>
-   <span class="block relative z-10"> {title}
-  </span>
-</button>
+   <span class="block relative z-10 whitespace-nowrap"> {title} </span>
+</a>
