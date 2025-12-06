@@ -39,11 +39,12 @@ const {title} = Astro.props
 
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content="Club de Rugby Victorianos, la cantera del rugby en Málaga. Únete a La Escuelita (4-18 años) o ven a animar a nuestros equipos. ¡Rugby y comunidad!" />
+        
         <link rel="icon" type="image/png" href="/victoriano.png" /> 
 
         <title>{title ? `${title} | CR Victorianos` : 'CR Victorianos'}</title>
     </head>
-    <body class="w-full min-h-screen m-0 p-0">
+    <body class="w-full min-h-screen m-0 p-0 bg-victoriano-blue">
         <Header />
          <main class="pt-16">
             <slot />

@@ -1,22 +1,25 @@
 ---
 import Image from "astro/components/Image.astro";
 import logo from "../../public/logos/victoriano.webp"
+import Button from "./ui/Button.astro";
 
 const {pathname} = Astro.url
 const currentPath = pathname
 ---
-<header class="fixed top-0 w-full bg-gray-900 text-white z-50">
- <nav class="w-full bg-victoriano-lightyellow p-2 flex justify-between shadow z-50 font-club">
+<header class="fixed top-0 w-full bg-gray-900 text-white z-50 font-extralight">
+ <nav class="w-full bg-victoriano-lightyellow p-2 flex justify-between shadow z-50 font-club ">
   <a href="/" class="flex items-center">
     <Image src={logo} alt="CR Victoriano" width="50" height="50"/>
-      <h1 class="text-victoriano-blue font-club items-center px-2 text-2xl ">CR VICTORIANOS</h1>
+      <h1 class="text-victoriano-blue font-club font-extralight items-center px-2 text-2xl ">CR VICTORIANOS</h1>
   </a>
   
   
   
-  <div class="hidden md:flex px-5 gap-6 items-center h-full">
+  <div class="hidden md:flex px-5 gap-6 items-end h-full font-extralight fuente-corregida">
+
     
     <a href="/club" class="
+    font-extralight
       -skew-x-12
       text-xl
       text-victoriano-blue
@@ -24,20 +27,21 @@ const currentPath = pathname
       transition-all  
       duration-200 
       flex
-      items-center
+      items-end
 
       hover:-skew-x-12
       hover:scale-130
       hover:bg-victoriano-blue
       hover:text-victoriano-lightyellow
-      hover: font-bold
+      hover:font-bold
       h-full 
       felx-1
+      
     ">
       CLUB
     </a>
 
-    <a href="/escuelita" class="
+    <a href="/escuelita" class="font-extralight
     -skew-x-12
       text-xl
       text-victoriano-blue
@@ -48,7 +52,7 @@ const currentPath = pathname
       hover:scale-130
       hover:bg-victoriano-blue
       hover:text-victoriano-lightyellow
-      hover: font-bold
+      hover:font-bold
       h-full
       flex
       items-center
@@ -57,7 +61,7 @@ const currentPath = pathname
       ESCUELITA
     </a>
 
-    <a href="/agenda" class="
+    <a href="/agenda" class="font-extralight
     -skew-x-12
       text-xl
       text-victoriano-blue
@@ -68,7 +72,7 @@ const currentPath = pathname
       hover:scale-130
       hover:bg-victoriano-blue
       hover:text-victoriano-lightyellow
-      hover: font-bold
+      hover:font-bold
       h-full
       flex
       items-center
@@ -79,7 +83,7 @@ const currentPath = pathname
     
    
 
-    <a href="/tienda" class="
+    <a href="/tienda" class="font-extralight
     -skew-x-12
       text-xl
       text-victoriano-blue
@@ -90,7 +94,7 @@ const currentPath = pathname
       hover:scale-130
       hover:bg-victoriano-blue
       hover:text-victoriano-lightyellow
-      hover: font-bold
+      hover:font-bold
       h-full
       flex
       items-center
@@ -100,7 +104,7 @@ const currentPath = pathname
       TIENDA
     </a>
 
-     <a href="/contacto" class="
+     <a href="/contacto" class=" font-extralight
      -skew-x-12
       text-xl
       text-victoriano-blue
@@ -111,7 +115,7 @@ const currentPath = pathname
       hover:scale-130
       hover:bg-victoriano-blue
       hover:text-victoriano-lightyellow
-      font-bold
+      hover:font-bold
       
       h-full
       flex
@@ -123,7 +127,7 @@ const currentPath = pathname
 
     
   </div>
-
+  
 
 <!-- // Menu hamburguesa -->
 
@@ -242,6 +246,7 @@ const currentPath = pathname
     "></label>
   </div>
 
+  
 <!-- <div class="flex gap-2 items-center ">
     <a class="hover:">
       <Image src={logo} alt="instagram" width="40" height="40" />
@@ -253,5 +258,11 @@ const currentPath = pathname
 
 </nav>
 </header>
+
+<style>
+  .fuente-corregida:{
+    line-height: 0.8
+  }
+</style>
 
  

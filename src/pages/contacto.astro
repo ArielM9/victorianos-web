@@ -1,10 +1,54 @@
 ---
+import ContactForm from "../components/react/ContactForm.jsx";
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-
 
 ---
 
 <BaseLayout title="Contacto">
-    <h1>Contacto</h1>
+    
+    <section class="max-w-7xl mx-auto py-16 px-4 gap-x-8 font-club ">
+        
+        <h1 class="text-3xl md:text-4xl font-headline text-center mb-12 text-victoriano-yellow font-extralight">
+            CONTÁCTANOS: Club de Rugby Victorianos
+        </h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-24 md:">
+            
+            <div class="md:col-span-1"> 
+                
+                <h2 class="text-2xl font-headline font-extralight mb-3 text-victoriano-lightyellow ">Dónde Encontrarnos y Horarios</h2>
+                
+                <p class="text-lg font-extralight text-victoriano-lightyellow mb-2">Dirección Sede:</p>
+                <p class="text-gray-300 ">Campo de Rugby Manuel Becerra, </p>
+                <p class="text-gray-300 mb-4">C. Cariñena, 2, 29730 Rincón de la Victoria, Málaga</p>
+                
+                <h3 class="text-xl font-headline font-extralight mb-2 text-victoriano-lightyellow ">Horario de Oficina</h3>
+                <p class="text-gray-300 mb-6 font-extralight">Martes y Juevess: 17:00 - 22:30</p>
+                
+                <div class="bg-gray-200 h-64 w-full rounded-lg overflow-hidden shadow-lg">
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1024.7856181476811!2d-4.30627275182469!3d36.73255924154793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd725a3b48b4141b%3A0x214b603c7035900b!2sCampo%20de%20Rugby%20Manuel%20Becerra!5e1!3m2!1ses!2ses!4v1765029177902!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                    <h3 class="text-2xl font-extralight mb-4 text-victoriano-blue-dark">Alternativas Rápidas</h3>
+                    <p class="text-lg text-gray-300 mb-2 font-extralight">
+                        📧 Email: <a href="mailto:oficial@victorianosrugby.com" class="text-club-blue hover:underline">oficial@victorianosrugby.com</a>
+                    </p>
+                    <p class="text-lg text-gray-300 font-extralight">
+                        📞 WhatsApp: <a href="tel:+34600123456" class="text-club-blue hover:underline">+34 600 12 34 56</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="md:col-span-1">
+                
+                <h2 class="text-2xl md:pl-5 font-headline text-victoriano-lightyellow font-extralight">Envíanos un Mensaje</h2>
+                
+                <ContactForm client:load />
+                
+                
+            </div>
+        </div>
+    </section>
+    
 </BaseLayout>
