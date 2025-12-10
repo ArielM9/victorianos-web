@@ -133,7 +133,12 @@ const currentPath = pathname;
 
     <div class="md:hidden flex items-center z-50">
       <!-- Checkbox invisible que controla el estado -->
-      <input type="checkbox" id="menu-toggle" class="hidden peer" />
+      <input
+        type="checkbox"
+        id="menu-toggle"
+        class="hidden peer"
+        autocomplete="off"
+      />
 
       <label
         for="menu-toggle"
@@ -268,3 +273,23 @@ const currentPath = pathname;
   </div> -->
   </nav>
 </header>
+
+<script is:inline>
+  // Script para manejar el comportamiento del menú en View Transitions
+  document.addEventListener("astro:page-load", () => {
+    const menuCheckbox = document.getElementById("menu-toggle");
+    const menuLinks = document.querySelectorAll(".md\\:hidden a"); // Select links inside mobile menu
+
+    // 1. Asegurar que el menú esté cerrado al cargar la página (para el botón 'Atrás')
+    if (menuCheckbox) {
+      menuCheckbox.checked = false;
+    }
+
+    // 2. Cerrar el menú al hacer clic en un enlace (para evitar snapshot del menú abierto)
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (menuCheckbox) menuCheckbox.checked = false;
+      });
+    });
+  });
+</script>
