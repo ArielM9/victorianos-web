@@ -1,38 +1,56 @@
 ---
 import Image from "astro/components/Image.astro";
 import sponsors from "../data/sponsors.json";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/sponsors/*.{webp,png,jpg,jpeg}",
+  { eager: true },
+);
 ---
 
 <section class="w-full py-12 bg-victoriano-blue">
   <div class="max-w-7xl mx-auto px-4">
-    
     <h2 class="text-center text-2xl font-headline text-victoriano-yellow mb-10">
       Patrocinadores Oficiales
     </h2>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-8">
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-8"
+    >
+      {
+        sponsors.map((sponsor) => {
+          const imagePath = `../assets${sponsor.logo}`;
+          const image = images[imagePath];
 
-      {sponsors.map((sponsor) => (
-        <a 
-          href={sponsor.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center justify-center transition duration-300
+          if (!image) {
+            console.error(
+              `Image not found for sponsor: ${sponsor.name} at path ${imagePath}`,
+            );
+            return null;
+          }
+
+          return (
+            <a
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center transition duration-300
                   hover:grayscale-0 
                  hover:scale-[1.5]
                  hover:shadow-lg
                  md:opacity-80 md:hover:opacity-100"
-        >
-          <Image
-            src={sponsor.logo}
-            alt={sponsor.name}
-            width={2000}  
-            height={2000}
-            class="max-h-20 sm:max-h-24 lg:max-h-28 object-contain rounded-md"
-          />
-        </a>
-      ))}
-
+            >
+              <Image
+                src={image.default}
+                alt={sponsor.name}
+                width={300}
+                height={150}
+                class="max-h-20 sm:max-h-24 lg:max-h-28 object-contain rounded-md"
+              />
+            </a>
+          );
+        })
+      }
     </div>
   </div>
 </section>

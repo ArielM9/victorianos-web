@@ -15,14 +15,14 @@ export interface MatchData {
     equipo: string;
     fecha: string;
     hora: string;
-    tipo: 'Partido' | 'Concentración' | 'Evento' ;
+    tipo: 'Partido' | 'Concentración' | 'Evento' | string;
     titulo: string;
     ubicacion: string;
     rival: string;
     esLocal: boolean;
-    logo_victorianos: string;
-    logo_rival: string;
-    
+    logo_victorianos?: string;
+    logo_rival?: string;
+
     // Propiedades opcionales o que dependen del 'tipo'
     resultado: Resultado | null;
     link_youtube: string | null;

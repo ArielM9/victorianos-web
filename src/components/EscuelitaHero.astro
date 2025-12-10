@@ -2,70 +2,65 @@
 import { Image } from "astro:assets";
 import Button from "./ui/Button.astro";
 
-import foto1 from "../../public/images/494697429_1237727098360504_4329431527100418984_n.webp";
-import foto2 from "../../public/images/RRN8680.webp";
+import foto1 from "../assets/images/494697429_1237727098360504_4329431527100418984_n.webp";
+import foto2 from "../assets/images/RRN8680.webp";
 import ButtonLink from "./ui/ButtonLink.astro";
-
-
 ---
 
 <section id="escuelita" class="bg-victoriano-lightyellow">
-
-    <div class="max-w-7xl mx-auto py-16 px-4 ">
-    <h2
-        class="text-4xl font-headline font-bold text-center mb-12 text-victoriano-blue"
-    >
-        Formando a los Próximos Victorianos
-    </h2>
-
-    <div class="space-y-20">
-        <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center"
+    <div class="max-w-7xl mx-auto py-16 px-4">
+        <h2
+            class="text-4xl font-headline font-bold text-center mb-12 text-victoriano-blue"
         >
-            <div>
-                <h3
-                    class="text-3xl font-headline font-semibold text-victoriano-blue mb-4"
-                >
-                    Comunidad y Valores desde el primer día
-                </h3>
-                <p class="text-victoriano-blue mb-6">
-                    Nuestro foco no está solo en el juego, sino en la persona.
-                    En La Escuelita, tus hijos aprenderán el respeto, la
-                    disciplina y el trabajo en equipo, valores fundamentales del
-                    rugby y del Club Victorianos.
-                </p>
-                
+            Formando a los Próximos Victorianos
+        </h2>
+
+        <div class="space-y-20">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center"
+            >
+                <div>
+                    <h3
+                        class="text-3xl font-headline font-semibold text-victoriano-blue mb-4"
+                    >
+                        Comunidad y Valores desde el primer día
+                    </h3>
+                    <p class="text-victoriano-blue mb-6">
+                        Nuestro foco no está solo en el juego, sino en la
+                        persona. En La Escuelita, tus hijos aprenderán el
+                        respeto, la disciplina y el trabajo en equipo, valores
+                        fundamentales del rugby y del Club Victorianos.
+                    </p>
+                </div>
+
+                <div class="mask-victorianos md:order-2 order-first">
+                    <Image src={foto1} alt={"Equipo M16"} class="w-xl" />
+                </div>
             </div>
 
-            <div class="mask-victorianos md:order-2 order-first">
-                <Image src={foto1} alt={"Equipo M16"} class="w-xl" />
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center"
+            >
+                <div class="mask-victorianos">
+                    <Image src={foto2} alt={"Foto charla Pablo"} />
+                </div>
+                <div>
+                    <h3
+                        class="text-3xl font-headline font-semibold text-victoriano-blue mb-4"
+                    >
+                        De 4 a 18 años: La Categoría perfecta
+                    </h3>
+                    <p class="text-victoriano-blue mb-6">
+                        Ofrecemos entrenamiento adaptado a cada etapa de
+                        desarrollo, desde la iniciación con el *touch rugby*
+                        hasta el contacto total. En Victorianos, nadie se queda
+                        fuera, ¡es un deporte para todos los cuerpos!
+                    </p>
+                </div>
             </div>
         </div>
-
-        <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center"
-        >
-            <div class="mask-victorianos">
-                <Image src={foto2} alt={"Foto charla Pablo"} />
-            </div>
-            <div>
-                <h3
-                    class="text-3xl font-headline font-semibold text-victoriano-blue mb-4"
-                >
-                    De 4 a 18 años: La Categoría perfecta
-                </h3>
-                <p class="text-victoriano-blue mb-6">
-                    Ofrecemos entrenamiento adaptado a cada etapa de desarrollo,
-                    desde la iniciación con el *touch rugby* hasta el contacto
-                    total. En Victorianos, nadie se queda fuera, ¡es un deporte
-                    para todos los cuerpos!
-                </p>
-               
-            </div>
-        </div>
-    </div>
-     <div class="flex justify-center">
-                    <ButtonLink title="Mas información" href="/escuelita" primary/>
+        <div class="flex justify-center">
+            <ButtonLink title="Mas información" href="/escuelita" primary />
         </div>
     </div>
 </section>
@@ -74,13 +69,13 @@ import ButtonLink from "./ui/ButtonLink.astro";
     /* La ruta DEBE ser la ruta pública raíz, que ya comprobaste. */
     .mask-victorianos {
         /* Para navegadores basados en Webkit (Chrome, Safari, Edge) */
-        -webkit-mask-image: url("/apoyo/mancha-v3.png");
+        -webkit-mask-image: url("../assets/apoyo/mancha-v3.png");
         -webkit-mask-size: 180% 100%;
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-position: center;
 
         /* Implementación estándar (para Firefox y otros) */
-        mask-image: url("/apoyo/mancha-v3.png");
+        mask-image: url("../assets/apoyo/mancha-v3.png");
         mask-size: 180% 100%;
         mask-repeat: no-repeat;
         mask-position: center;

@@ -1,53 +1,57 @@
 ---
 import Image from "astro/components/Image.astro";
-import logo from "../../public/logos/victoriano.webp"
+import logo from "../assets/logos/victoriano.webp";
 import Button from "./ui/Button.astro";
 
-const {pathname} = Astro.url
-const currentPath = pathname
+const { pathname } = Astro.url;
+const currentPath = pathname;
 ---
-<header class="fixed top-0 w-full bg-gray-900 text-white z-50 font-extralight">
- <nav class="w-full bg-victoriano-lightyellow p-2 flex justify-between shadow z-50 font-club ">
-  <a href="/" class="flex items-center">
-    <Image src={logo} alt="CR Victoriano" width="50" height="50"/>
-      <h1 class="text-victoriano-blue font-club font-extralight items-center px-2 text-2xl ">CR VICTORIANOS</h1>
-  </a>
-  
-  
-  
-  <div class="hidden md:flex px-5 gap-6 items-end h-full font-extralight ">
 
-    
-    <a href="/club" class="
-    font-extralight
+<header class="fixed top-0 w-full bg-gray-900 text-white z-50 font-extralight">
+  <nav
+    class="w-full bg-victoriano-lightyellow p-2 flex justify-between shadow z-50 font-club"
+  >
+    <a href="/" class="flex items-center">
+      <Image src={logo} alt="CR Victoriano" width="50" height="50" />
+      <h1
+        class="text-victoriano-blue font-club font-extralight items-center px-2 text-2xl"
+      >
+        CR VICTORIANOS
+      </h1>
+    </a>
+
+    <div class="hidden md:flex px-5 gap-6 items-end h-full font-extralight">
+      <a
+        href="/club"
+        class="font-extralight
       -skew-x-12
       text-xl
       text-victoriano-blue
       p-2
-      transition-all  
-      duration-200 
+      transition-all
+      duration-200
       flex
       items-end
-
       hover:-skew-x-12
       hover:scale-130
       hover:bg-victoriano-blue
       hover:text-victoriano-lightyellow
       hover:font-bold
-      h-full 
-      felx-1
-      
-    ">
-      CLUB
-    </a>
+      h-full
+      felx-1"
+      >
+        CLUB
+      </a>
 
-    <a href="/escuelita" class="font-extralight
+      <a
+        href="/escuelita"
+        class="font-extralight
     -skew-x-12
       text-xl
       text-victoriano-blue
-      p-2  
-      transition-all 
-      duration-200 
+      p-2
+      transition-all
+      duration-200
       hover:-skew-x-12
       hover:scale-130
       hover:bg-victoriano-blue
@@ -55,19 +59,20 @@ const currentPath = pathname
       hover:font-bold
       h-full
       flex
-      items-center
-      
-    ">
-      ESCUELITA
-    </a>
+      items-center"
+      >
+        ESCUELITA
+      </a>
 
-    <a href="/agenda" class="font-extralight
+      <a
+        href="/agenda"
+        class="font-extralight
     -skew-x-12
       text-xl
       text-victoriano-blue
-      p-2  
-      transition-all 
-      duration-200 
+      p-2
+      transition-all
+      duration-200
       hover:-skew-x-12
       hover:scale-130
       hover:bg-victoriano-blue
@@ -75,21 +80,20 @@ const currentPath = pathname
       hover:font-bold
       h-full
       flex
-      items-center
-      
-    ">
-      AGENDA
-    </a>
-    
-   
+      items-center"
+      >
+        AGENDA
+      </a>
 
-    <a href="/tienda" class="font-extralight
+      <a
+        href="/tienda"
+        class="font-extralight
     -skew-x-12
       text-xl
       text-victoriano-blue
-      p-2  
-      transition-all 
-      duration-200 
+      p-2
+      transition-all
+      duration-200
       hover:-skew-x-12
       hover:scale-130
       hover:bg-victoriano-blue
@@ -97,20 +101,20 @@ const currentPath = pathname
       hover:font-bold
       h-full
       flex
-      items-center
-      
-      
-    ">
-      TIENDA
-    </a>
+      items-center"
+      >
+        TIENDA
+      </a>
 
-     <a href="/contacto" class=" font-extralight
+      <a
+        href="/contacto"
+        class="font-extralight
      -skew-x-12
       text-xl
       text-victoriano-blue
-      p-2  
-      transition-all 
-      duration-200 
+      p-2
+      transition-all
+      duration-200
       hover:-skew-x-12
       hover:scale-130
       hover:bg-victoriano-blue
@@ -119,135 +123,142 @@ const currentPath = pathname
       
       h-full
       flex
-      items-center
-      
-    ">
-      CONTACTO
-    </a>
+      items-center"
+      >
+        CONTACTO
+      </a>
+    </div>
 
-    
-  </div>
-  
+    <!-- // Menu hamburguesa -->
 
-<!-- // Menu hamburguesa -->
+    <div class="md:hidden flex items-center z-50">
+      <!-- Checkbox invisible que controla el estado -->
+      <input type="checkbox" id="menu-toggle" class="hidden peer" />
 
-<div class="md:hidden flex items-center z-50">
-    <!-- Checkbox invisible que controla el estado -->
-    <input type="checkbox" id="menu-toggle" class="hidden peer" />
-
-      <label for="menu-toggle" class="
-      z-20
+      <label
+        for="menu-toggle"
+        class="z-20
       flex flex-col justify-center items-center
       w-10 h-10
       cursor-pointer
-    ">
-      <span class="
-        w-6 h-0.5 bg-victoriano-blue
+      peer-checked:[&>:first-child]:rotate-45 peer-checked:[&>:first-child]:translate-y-2
+      peer-checked:[&>:nth-child(2)]:opacity-0
+      peer-checked:[&>:last-child]:-rotate-45 peer-checked:[&>:last-child]:-translate-y-2"
+      >
+        <span
+          class="w-6 h-0.5 bg-victoriano-blue
+        transition-all duration-300"
+        ></span>
+        <span
+          class="w-6 h-0.5 bg-victoriano-blue
         transition-all duration-300
-        peer-checked:rotate-45 peer-checked:translate-y-1.5
-      "></span>
-      <span class="
-        w-6 h-0.5 bg-victoriano-blue
+        mt-1.5"
+        ></span>
+        <span
+          class="w-6 h-0.5 bg-victoriano-blue
         transition-all duration-300
-        mt-1.5
-        peer-checked:opacity-0
-      "></span>
-      <span class="
-        w-6 h-0.5 bg-victoriano-blue
-        transition-all duration-300
-        mt-1.5
-        peer-checked:-rotate-45 peer-checked:-translate-y-1.5
-      "></span>
-    </label>
-  <div class="
-      fixed inset-0 bg-victoriano-lightyellow
+        mt-1.5"
+        ></span>
+      </label>
+      <div
+        class="fixed inset-0 bg-victoriano-lightyellow
       transform -translate-x-full
       transition-transform duration-300 ease-in-out
       peer-checked:translate-x-0
       z-10
       pt-20 px-6
-      flex flex-col items-center
-    ">
+      flex flex-col items-center"
+      >
+        <a
+          href="/"
+          class="w-full text-center text-xl
+        text-victoriano-blue
+        py-4 px-2
+        transition-all duration-300
+        border-b border-victoriano-blue/20
+        font-bold"
+          aria-current={currentPath === "/club" ? "page" : undefined}
+        >
+          Inicio
+        </a>
+        <a
+          href="/club"
+          class="w-full text-center text-xl
+        text-victoriano-blue
+        py-4 px-2
+        transition-all duration-300
+        border-b border-victoriano-blue/20
+        font-bold"
+          aria-current={currentPath === "/club" ? "page" : undefined}
+        >
+          El Club
+        </a>
 
-      <a href="/" class="
-        w-full text-center text-xl
+        <a
+          href="/escuelita"
+          class="w-full text-center text-xl
         text-victoriano-blue
-        py-4 px-2  
+        py-4 px-2
         transition-all duration-300
         border-b border-victoriano-blue/20
-        font-bold
-      " aria-current={currentPath === '/club' ? 'page' : undefined}>
-        Inicio
-      </a>
-      <a href="/club" class="
-        w-full text-center text-xl
-        text-victoriano-blue
-        py-4 px-2  
-        transition-all duration-300
-        border-b border-victoriano-blue/20
-        font-bold
-      " aria-current={currentPath === '/club' ? 'page' : undefined}>
-        El Club
-      </a>
+        font-bold"
+          aria-current={currentPath === "/escuelita" ? "page" : undefined}
+        >
+          La Escuelita
+        </a>
 
-      <a href="/escuelita" class="
-        w-full text-center text-xl
+        <a
+          href="/agenda"
+          class="w-full text-center text-xl
         text-victoriano-blue
-        py-4 px-2  
+        py-4 px-2
         transition-all duration-300
         border-b border-victoriano-blue/20
-        font-bold
-      " aria-current={currentPath === '/escuelita' ? 'page' : undefined}>
-        La Escuelita
-      </a>
-      
-      <a href="/agenda" class="
-         w-full text-center text-xl
-        text-victoriano-blue
-        py-4 px-2  
-        transition-all duration-300
-        border-b border-victoriano-blue/20
-        font-bold
-      " aria-current={currentPath === '/agenda' ? 'page' : undefined}>
-        Agenda
-      </a>
+        font-bold"
+          aria-current={currentPath === "/agenda" ? "page" : undefined}
+        >
+          Agenda
+        </a>
 
-      <a href="/tienda" class="
-         w-full text-center text-xl
+        <a
+          href="/tienda"
+          class="w-full text-center text-xl
         text-victoriano-blue
-        py-4 px-2  
+        py-4 px-2
         transition-all duration-300
         border-b border-victoriano-blue/20
-        font-bold
-      " aria-current={currentPath === '/tienda' ? 'page' : undefined}>
-        Tienda
-      </a>
+        font-bold"
+          aria-current={currentPath === "/tienda" ? "page" : undefined}
+        >
+          Tienda
+        </a>
 
-      
-
-      <a href="/contacto" class="
-         w-full text-center text-xl
+        <a
+          href="/contacto"
+          class="w-full text-center text-xl
         text-victoriano-blue
-        py-4 px-2  
+        py-4 px-2
         transition-all duration-300
         border-b border-victoriano-blue/20
-        font-bold
-      " aria-current={currentPath === '/contacto' ? 'page' : undefined}>
-        Contacto
-      </a>
+        font-bold"
+          aria-current={currentPath === "/contacto" ? "page" : undefined}
+        >
+          Contacto
+        </a>
+      </div>
+
+      <!-- Overlay para cerrar al hacer clic fuera -->
+      <label
+        for="menu-toggle"
+        class="fixed inset-0 bg-black bg-opacity-50
+      invisible opacity-0
+      transition-all duration-500
+      peer-checked:visible peer-checked:opacity-100
+      z-0"
+      ></label>
     </div>
-    
-    <!-- Overlay para cerrar al hacer clic fuera -->
-    <label for="menu-toggle" class="
-      fixed inset-0 bg-black bg-opacity-50
-      hidden
-      peer-checked:block
-      z-0
-    "></label>
-  </div>
 
-  
-<!-- <div class="flex gap-2 items-center ">
+    <!-- <div class="flex gap-2 items-center ">
     <a class="hover:">
       <Image src={logo} alt="instagram" width="40" height="40" />
     </a>
@@ -255,6 +266,5 @@ const currentPath = pathname
       <Image src={logo} alt="instagram" width="40" height="40" />
     </a>
   </div> -->
-
-</nav>
+  </nav>
 </header>

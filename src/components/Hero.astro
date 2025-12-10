@@ -1,80 +1,89 @@
 ---
 import Image from "astro/components/Image.astro";
 import Button from "./ui/Button.astro";
-import '@fontsource/luckiest-guy';
+import "@fontsource/luckiest-guy";
 import ButtonLink from "./ui/ButtonLink.astro";
 
-const images = [
-    '/images/481726162_18464240164068479_8647602654784967052_n.webp',
-    '/images/494697429_1237727098360504_4329431527100418984_n.webp',
-    '/images/514940711_18331539109206568_6782860399862942128.webp',
-    '/images/RRN6924.webp',
-    '/images/RRN7031.webp',
-    '/images/RRN8680.webp',
-];
+import img1 from "../assets/images/481726162_18464240164068479_8647602654784967052_n.webp";
+import img2 from "../assets/images/494697429_1237727098360504_4329431527100418984_n.webp";
+import img3 from "../assets/images/514940711_18331539109206568_6782860399862942128.webp";
+import img4 from "../assets/images/RRN6924.webp";
+import img5 from "../assets/images/RRN7031.webp";
+import img6 from "../assets/images/RRN8680.webp";
+
+const images = [img1, img2, img3, img4, img5, img6];
 ---
 
 <section id="hero-slider" class="relative h-[95vh] w-full overflow-hidden">
-    
     <div class="absolute inset-0 h-full w-full opacity-60">
-        {images.map((imgSrc, index) => (
-            <div
-                id={`hero-slide-${index}`}
-                class={`
-                    absolute inset-0 bg-cover bg-center transition-opacity duration-3000 h-full
-                    ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}
+        {
+            images.map((imgSrc, index) => (
+                <div
+                    id={`hero-slide-${index}`}
+                    class={`
+                    absolute inset-0 transition-opacity duration-3000 h-full w-full
+                    ${index === 0 ? "opacity-100 z-10" : "opacity-0 z-0"}
                 `}
-                style={`background-image: url(${imgSrc});`}
-            ></div>
-        ))}
+                >
+                    <Image
+                        src={imgSrc}
+                        alt="Hero image"
+                        class="h-full w-full object-cover"
+                        width={1920}
+                        height={1080}
+                        loading={index === 0 ? "eager" : "lazy"}
+                    />
+                </div>
+            ))
+        }
     </div>
 
     <div class="absolute inset-0 z-20 h-full w-full bg-gray-900/40">
         <div class="flex flex-col items-center justify-center w-full h-full">
-                
-                
-                
-                    <div class="flex flex-col items-center mb-5 px-4">
-                        
-                        <h1 class="text-5xl text-white lg:text-5xl mb-8 font-club">Club de rugby <span class="text-victoriano-lightyellow">VICTORIANOS</span> </h1>
-                        <h2 class="text-white text-2xl font-club ">Donde el carácter se forma en cada placaje,</h2>
-                        <h2 class="text-white text-2xl font-club ">y la amistad es la única victoria obligatoria.</h2>
-
-                    </div >
-                    <div class="flex md:flex-row items-center  md:items-center flex-col "> 
-                        <ButtonLink title="Únete al club" primary href="/contacto"/>
-                        <ButtonLink title="Próximo partido" href="/agenda" />
-                    </div>
-                
-            
+            <div class="flex flex-col items-center mb-5 px-4">
+                <h1 class="text-5xl text-white lg:text-5xl mb-8 font-club">
+                    Club de rugby <span class="text-victoriano-lightyellow"
+                        >VICTORIANOS</span
+                    >
+                </h1>
+                <h2 class="text-white text-2xl font-club">
+                    Donde el carácter se forma en cada placaje,
+                </h2>
+                <h2 class="text-white text-2xl font-club">
+                    y la amistad es la única victoria obligatoria.
+                </h2>
+            </div>
+            <div class="flex md:flex-row items-center md:items-center flex-col">
+                <ButtonLink title="Únete al club" primary href="/contacto" />
+                <ButtonLink title="Próximo partido" href="/agenda" />
+            </div>
         </div>
     </div>
 
     <script is:inline>
         // Obtener referencias a todos los contenedores de diapositivas
         const slides = [
-            document.getElementById('hero-slide-0'),
-            document.getElementById('hero-slide-1'),
-            document.getElementById('hero-slide-2'),
-            document.getElementById('hero-slide-3'),
-            document.getElementById('hero-slide-4'),
-            document.getElementById('hero-slide-5'),
-            
+            document.getElementById("hero-slide-0"),
+            document.getElementById("hero-slide-1"),
+            document.getElementById("hero-slide-2"),
+            document.getElementById("hero-slide-3"),
+            document.getElementById("hero-slide-4"),
+            document.getElementById("hero-slide-5"),
         ];
         let currentIndex = 0;
         const intervalTime = 7000; // 3 segundos
 
         function nextSlide() {
             // Oculta la imagen actual
-            slides[currentIndex].classList.remove('opacity-100', 'z-10');
-            slides[currentIndex].classList.add('opacity-0', 'z-0');
+            slides[currentIndex].classList.remove("opacity-100", "z-10");
+            slides[currentIndex].classList.add("opacity-0", "z-0");
 
             // Calcula el siguiente índice (0, 1, 2, 0...)
             currentIndex = (currentIndex + 1) % slides.length;
 
             // Muestra la nueva imagen
-            slides[currentIndex].classList.remove('opacity-0', 'z-0');
-            slides[currentIndex].classList.add('opacity-100', 'z-10');
+            slides[currentIndex].classList.remove("opacity-0", "z-0");
+            slides[currentIndex].classList.add("opacity-100", "z-10");
         }
 
         // Inicia el bucle si hay más de una diapositiva

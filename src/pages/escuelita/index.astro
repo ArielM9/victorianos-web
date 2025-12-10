@@ -1,122 +1,175 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import ButtonLink from '../../components/ui/ButtonLink.astro';
+import ButtonLink from "../../components/ui/ButtonLink.astro";
 
-import foto1 from "../../../public/images/494697429_1237727098360504_4329431527100418984_n.webp";
-import foto2 from "../../../public/images/RRN8680.webp";
-import Button from '../../components/ui/Button.astro';
-
+import foto1 from "../../assets/images/494697429_1237727098360504_4329431527100418984_n.webp";
+import foto2 from "../../assets/images/RRN8680.webp";
 ---
 
-<BaseLayout title="La Escuelita" >
-    <section class="max-w-7xl mx-auto py-16 px-4 font-club ">
-
-        
-        
-        <h1 class="text-4xl md:text-5xl font-headline text-center mb-16 text-victoriano-yellow font-extralight">
+<BaseLayout title="La Escuelita">
+    <section class="max-w-7xl mx-auto py-16 px-4 font-club">
+        <h1
+            class="text-4xl md:text-5xl font-headline text-center mb-16 text-victoriano-yellow font-extralight"
+        >
             La Escuelita: Formando el Futuro del Rugby en Málaga
         </h1>
 
         <div class="flex justify-center md:justify-start">
-             <ButtonLink title="Ver Horarios" href='#horarios' primary/>
+            <ButtonLink title="Ver Horarios" href="#horarios" primary />
         </div>
         <div class="space-y-20">
-            
             <div class="grid grid-cols-1 md:grid-cols-2 md:gap-20 items-center">
                 <div>
-                    <h2 class="text-3xl font-headline text-victoriano-lightyellow mb-4 font-extralight">
+                    <h2
+                        class="text-3xl font-headline text-victoriano-lightyellow mb-4 font-extralight"
+                    >
                         Comunidad y Valores desde el primer día
                     </h2>
                     <p class="text-victoriano-lightyellow mb-6 font-extralight">
-                        Nuestro foco no está solo en el juego, sino en la persona. En La Escuelita, tus hijos aprenderán el respeto, la disciplina y el trabajo en equipo, valores fundamentales del rugby y del Club Victorianos.
+                        Nuestro foco no está solo en el juego, sino en la
+                        persona. En La Escuelita, tus hijos aprenderán el
+                        respeto, la disciplina y el trabajo en equipo, valores
+                        fundamentales del rugby y del Club Victorianos.
                     </p>
-                   
                 </div>
 
                 <div class="mask-victorianos md:order-2 order-first">
-                    <Image src={foto1} alt={"Equipo M16 en formación"} class="w-xl" />
+                    <Image
+                        src={foto1}
+                        alt={"Equipo M16 en formación"}
+                        class="w-xl"
+                    />
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center"
+            >
                 <div class="mask-victorianos">
                     <Image src={foto2} alt={"Charla de entrenador a niños"} />
                 </div>
                 <div>
-                    <h2 class="text-3xl font-headline font-extralight text-victoriano-lightyellow mb-4">
+                    <h2
+                        class="text-3xl font-headline font-extralight text-victoriano-lightyellow mb-4"
+                    >
                         Desarrollo Integral: De 4 a 18 años
                     </h2>
                     <p class="text-victoriano-lightyellow mb-6 font-extralight">
-                        Ofrecemos entrenamiento adaptado a cada etapa de desarrollo, desde la iniciación con el *touch rugby* hasta el contacto total. En Victorianos, nadie se queda fuera, ¡es un deporte para todos los cuerpos!
+                        Ofrecemos entrenamiento adaptado a cada etapa de
+                        desarrollo, desde la iniciación con el *touch rugby*
+                        hasta el contacto total. En Victorianos, nadie se queda
+                        fuera, ¡es un deporte para todos los cuerpos!
                     </p>
-                    
                 </div>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center"
+            >
                 <div>
-                    <h2 class="text-3xl font-headline font-extralight text-victoriano-lightyellow mb-4">
+                    <h2
+                        class="text-3xl font-headline font-extralight text-victoriano-lightyellow mb-4"
+                    >
                         La Cantera del Rugby Malagueño
                     </h2>
                     <p class="text-victoriano-lightyellow mb-6 font-extralight">
-                        Somos el principal centro de formación de rugby en la Costa del Sol. Nuestro objetivo es alimentar la base, asegurar la continuidad deportiva y desarrollar talentos que se integren al equipo senior.
+                        Somos el principal centro de formación de rugby en la
+                        Costa del Sol. Nuestro objetivo es alimentar la base,
+                        asegurar la continuidad deportiva y desarrollar talentos
+                        que se integren al equipo senior.
                     </p>
-                   
                 </div>
 
                 <div class="mask-victorianos md:order-2 order-first">
-                    <Image src={foto1} alt={"Niños jugando rugby"} class="w-xl" /> 
+                    <Image
+                        src={foto1}
+                        alt={"Niños jugando rugby"}
+                        class="w-xl"
+                    />
                 </div>
             </div>
 
-             <div class="felx justify-center max-w-150">
-                        <ButtonLink title="Únete al club" href="/contacto" primary/>
+            <div class="felx justify-center max-w-150">
+                <ButtonLink title="Únete al club" href="/contacto" primary />
             </div>
         </div>
 
         <hr id="horarios" class="my-16 border-t border-gray-200" />
 
         <div class="pt-8">
-            <h2 class="text-3xl font-headline font-extralight text-center mb-10 text-victoriano-lightyellow">
+            <h2
+                class="text-3xl font-headline font-extralight text-center mb-10 text-victoriano-lightyellow"
+            >
                 Categorías y Horarios de Entrenamiento
             </h2>
-            
-            <div class="overflow-x-auto shadow-xl rounded-lg border border-gray-100">
+
+            <div
+                class="overflow-x-auto shadow-xl rounded-lg border border-gray-100"
+            >
                 <table class="w-full text-left text-gray-500">
-                    <thead class="text-xs text-victoriano-blue uppercase bg-victoriano-lightyellow/50">
+                    <thead
+                        class="text-xs text-victoriano-blue uppercase bg-victoriano-lightyellow/50"
+                    >
                         <tr>
                             <th scope="col" class="px-6 py-3">Categoría</th>
                             <th scope="col" class="px-6 py-3">Edad (Aprox.)</th>
                             <th scope="col" class="px-6 py-3">Horario</th>
-                            <th scope="col" class="px-6 py-3">Enfoque Principal</th>
+                            <th scope="col" class="px-6 py-3"
+                                >Enfoque Principal</th
+                            >
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="bg-white border-b hover:bg-gray-50">
-                            <th scope="row" class="px-6 py-4 font-bold text-victoriano-blue whitespace-nowrap">Sub 6/8/10</th>
+                            <th
+                                scope="row"
+                                class="px-6 py-4 font-bold text-victoriano-blue whitespace-nowrap"
+                                >Sub 6/8/10</th
+                            >
                             <td class="px-6 py-4">4 a 10 años</td>
-                            <td class="px-6 py-4">Martes y Jueves, 17:00 - 18:00</td>
-                            <td class="px-6 py-4">Juegos, agilidad y Psicomotricidad.</td>
+                            <td class="px-6 py-4"
+                                >Martes y Jueves, 17:00 - 18:00</td
+                            >
+                            <td class="px-6 py-4"
+                                >Juegos, agilidad y Psicomotricidad.</td
+                            >
                         </tr>
                         <tr class="bg-white border-b hover:bg-gray-50">
-                            <th scope="row" class="px-6 py-4 font-bold text-victoriano-blue whitespace-nowrap">Sub 12/14</th>
+                            <th
+                                scope="row"
+                                class="px-6 py-4 font-bold text-victoriano-blue whitespace-nowrap"
+                                >Sub 12/14</th
+                            >
                             <td class="px-6 py-4">10 a 14 años</td>
-                            <td class="px-6 py-4">Martes y Jueves, 17:00 - 19:30</td>
-                            <td class="px-6 py-4">Reglas básicas y trabajo en equipo.</td>
+                            <td class="px-6 py-4"
+                                >Martes y Jueves, 17:00 - 19:30</td
+                            >
+                            <td class="px-6 py-4"
+                                >Reglas básicas y trabajo en equipo.</td
+                            >
                         </tr>
-                         <tr class="bg-white border-b hover:bg-gray-50">
-                            <th scope="row" class="px-6 py-4 font-bold text-victoriano-blue whitespace-nowrap">Sub 16/18</th>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <th
+                                scope="row"
+                                class="px-6 py-4 font-bold text-victoriano-blue whitespace-nowrap"
+                                >Sub 16/18</th
+                            >
                             <td class="px-6 py-4">14 a 18 años</td>
-                            <td class="px-6 py-4">Martes y Jueves, 19:00 - 21:00</td>
-                            <td class="px-6 py-4">Táctica y desarrollo de contacto.</td>
+                            <td class="px-6 py-4"
+                                >Martes y Jueves, 19:00 - 21:00</td
+                            >
+                            <td class="px-6 py-4"
+                                >Táctica y desarrollo de contacto.</td
+                            >
                         </tr>
                     </tbody>
                 </table>
             </div>
-            
+
             <p class="mt-6 text-sm text-gray-400 text-center font-extralight">
-                * Todos los entrenamientos se realizan en el Campo de Rugby Manuel Becerra.
+                * Todos los entrenamientos se realizan en el Campo de Rugby
+                Manuel Becerra.
             </p>
         </div>
     </section>
@@ -125,11 +178,11 @@ import Button from '../../components/ui/Button.astro';
 <style>
     /* Estilos del mask-victorianos (Mantenido de tu EscuelitaHero) */
     .mask-victorianos {
-        -webkit-mask-image: url("/apoyo/mancha-v3.png");
+        -webkit-mask-image: url("../../assets/apoyo/mancha-v3.png");
         -webkit-mask-size: 180% 100%;
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-position: center;
-        mask-image: url("/apoyo/mancha-v3.png");
+        mask-image: url("../../assets/apoyo/mancha-v3.png");
         mask-size: 180% 100%;
         mask-repeat: no-repeat;
         mask-position: center;
